@@ -8,16 +8,25 @@ gsap.set('.imageDiv', {
   scale: 0.3,
 })
 
-gsap.to('.imageDiv', {
-  scale: 1,
-  ease: 'power4.out',
+gsap.set('.content', {
+  gap: '80rem',
+})
+
+const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.page2',
     start: 'top top',
-    end: 'bottom -50%',
+    end: 'top -190%',
     scrub: true,
     pin: true,
   },
+})
+
+tl.to('.imageDiv', {
+  scale: 1,
+  ease: 'power4.out',
+}).to('.content', {
+  gap: '7rem',
 })
 
 // const play = document.querySelector('.play')
